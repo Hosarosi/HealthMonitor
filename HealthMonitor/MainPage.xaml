@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthMonitor.MainPage"
+             Title="HealthMonitor">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20"
+            VerticalOptions="Center">
+
+            <Label
+                Text="HealthMonitor"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Acompanhamento de Sinais Vitais"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="E-mail"
+                Keyboard="Email" />
+
+            <Entry
+                x:Name="SenhaEntry"
+                Placeholder="Senha"
+                IsPassword="True" />
+
+            <Button
+                Text="Entrar"
+                Clicked="OnEntrarClicked" />
+
+            <Button
+                Text="Cadastrar usuário"
+                Clicked="OnCadastrarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
