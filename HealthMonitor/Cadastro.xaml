@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HealthMonitor.CadastroPage"
+    Title="Cadastro de Usuário">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="15">
+
+            <Label
+                Text="Cadastro de Usuário"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label Text="Nome completo" />
+            <Entry
+                x:Name="NomeEntry"
+                Placeholder="Digite seu nome" />
+
+            <Label Text="Idade" />
+            <Entry
+                x:Name="IdadeEntry"
+                Placeholder="Digite sua idade"
+                Keyboard="Numeric" />
+
+            <Label Text="Peso (kg)" />
+            <Entry
+                x:Name="PesoEntry"
+                Placeholder="Exemplo: 70,5"
+                Keyboard="Numeric" />
+
+            <Label Text="Altura (m)" />
+            <Entry
+                x:Name="AlturaEntry"
+                Placeholder="Exemplo: 1,73"
+                Keyboard="Numeric" />
+
+            <Label Text="E-mail" />
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Digite seu e-mail"
+                Keyboard="Email" />
+
+            <Label Text="Senha" />
+            <Entry
+                x:Name="SenhaEntry"
+                Placeholder="Crie uma senha"
+                IsPassword="True" />
+
+            <Button
+                Text="Salvar cadastro"
+                Clicked="OnSalvarClicked" />
+
+            <Button
+                Text="Voltar"
+                Clicked="OnVoltarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
