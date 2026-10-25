@@ -1,45 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HealthMonitor.MainPage"
-             Title="HealthMonitor">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HealthMonitor.MainPage"
+    Title="HealthMonitor"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F8F5FC">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30"
-            Spacing="20"
-            VerticalOptions="Center">
+        <Grid Padding="32,24">
 
-            <Label
-                Text="HealthMonitor"
-                FontSize="32"
-                FontAttributes="Bold"
-                HorizontalOptions="Center" />
+            <VerticalStackLayout
+                Spacing="14"
+                VerticalOptions="Center"
+                HorizontalOptions="Fill"
+                MaximumWidthRequest="900"
+                Margin="0"
+                >
 
-            <Label
-                Text="Acompanhamento de Sinais Vitais"
-                FontSize="16"
-                HorizontalOptions="Center" />
+                <Label
+                    Text="HealthMonitor"
+                    FontFamily="Georgia"
+                    FontSize="36"
+                    FontAttributes="Bold"
+                    TextColor="#8064C8"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
 
-            <Entry
-                x:Name="EmailEntry"
-                Placeholder="E-mail"
-                Keyboard="Email" />
+                <Image
+                    Source="healthmonitor.png"
+                    HeightRequest="165"
+                    WidthRequest="220"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center" />
 
-            <Entry
-                x:Name="SenhaEntry"
-                Placeholder="Senha"
-                IsPassword="True" />
+                <Label
+                    Text="Acompanhamento de Sinais Vitais"
+                    FontFamily="Georgia"
+                    FontSize="18"
+                    FontAttributes="Italic"
+                    TextColor="#776B91"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,-4,0,12" />
 
-            <Button
-                Text="Entrar"
-                Clicked="OnEntrarClicked" />
+                <Entry
+                    x:Name="EmailEntry"
+                    Placeholder="E-mail"
+                    Keyboard="Email"
+                    BackgroundColor="White"
+                    TextColor="#34265C"
+                    PlaceholderColor="#A39AB8"
+                    HeightRequest="48"
+                    HorizontalOptions="Fill" />
 
-            <Button
-                Text="Cadastrar usuário"
-                Clicked="OnCadastrarClicked" />
+                <Entry
+                    x:Name="SenhaEntry"
+                    Placeholder="Senha"
+                    IsPassword="True"
+                    BackgroundColor="White"
+                    TextColor="#34265C"
+                    PlaceholderColor="#A39AB8"
+                    HeightRequest="48"
+                    HorizontalOptions="Fill" />
 
-        </VerticalStackLayout>
+                <Button
+                    Text="Entrar"
+                    Clicked="OnEntrarClicked"
+                    BackgroundColor="#A58AE8"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="48"
+                    HorizontalOptions="Fill"
+                    Margin="0,4,0,0" />
+
+                <Button
+                    Text="Cadastrar usuário"
+                    Clicked="OnCadastrarClicked"
+                    BackgroundColor="White"
+                    TextColor="#8064C8"
+                    BorderColor="#C8B8EE"
+                    BorderWidth="1"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="48"
+                    HorizontalOptions="Fill" />
+
+                <Label
+                    Text="Cuidar hoje para um amanhã melhor."
+                    FontFamily="Georgia"
+                    FontSize="13"
+                    FontAttributes="Italic"
+                    TextColor="#776B91"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,8,0,0" />
+
+            </VerticalStackLayout>
+        </Grid>
     </ScrollView>
-
 </ContentPage>

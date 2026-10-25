@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HealthMonitor.HomePage"
+    Title=" "
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F8F5FC">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="20">
+
+            <Label
+                Text="HealthMonitor"
+                FontFamily="OpenSansSemibold"
+                FontSize="32"
+                TextColor="#8064C8"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Olá! Cuide da sua saúde."
+                FontFamily="OpenSans"
+                FontSize="18"
+                TextColor="#776B91"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="O que deseja fazer hoje?"
+                FontFamily="OpenSans"
+                FontSize="16"
+                TextColor="#625B70"
+                HorizontalOptions="Center" />
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9E1F8"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 18"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        Text="Registrar sinais vitais"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="20"
+                        TextColor="#8064C8" />
+
+                    <Label
+                        Text="Registre pressão arterial, frequência cardíaca, temperatura e oxigenação."
+                        FontFamily="OpenSans"
+                        FontSize="14"
+                        TextColor="#776B91" />
+
+                    <Button
+                        Text="Registrar medição"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="14"
+                        BackgroundColor="#A58AE8"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="46"
+                        Clicked="OnRegistrarClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9E1F8"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 18"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        Text="Histórico de medições"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="20"
+                        TextColor="#8064C8" />
+
+                    <Label
+                        Text="Consulte seus registros anteriores."
+                        FontFamily="OpenSans"
+                        FontSize="14"
+                        TextColor="#776B91" />
+
+                    <Button
+                        Text="Ver histórico"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="14"
+                        BackgroundColor="#A58AE8"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="46"
+                        Clicked="OnHistoricoClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9E1F8"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 18"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        Text="Alertas"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="20"
+                        TextColor="#8064C8" />
+
+                    <Label
+                        Text="Consulte os avisos relacionados às medições."
+                        FontFamily="OpenSans"
+                        FontSize="14"
+                        TextColor="#776B91" />
+
+                    <Button
+                        Text="Ver alertas"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="14"
+                        BackgroundColor="#A58AE8"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="46"
+                        Clicked="OnAlertasClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9E1F8"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 18"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        Text="Resumo"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="20"
+                        TextColor="#8064C8" />
+
+                    <Label
+                        Text="Visualize um resumo das medições registradas."
+                        FontFamily="OpenSans"
+                        FontSize="14"
+                        TextColor="#776B91" />
+
+                    <Button
+                        Text="Ver resumo"
+                        FontFamily="OpenSansSemibold"
+                        FontSize="14"
+                        BackgroundColor="#A58AE8"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="46"
+                        Clicked="OnResumoClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button
+                Text="Sair"
+                FontFamily="OpenSansSemibold"
+                FontSize="14"
+                BackgroundColor="Transparent"
+                TextColor="#8064C8"
+                BorderColor="#C8B8EE"
+                BorderWidth="1"
+                CornerRadius="12"
+                HeightRequest="46"
+                Clicked="OnSairClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

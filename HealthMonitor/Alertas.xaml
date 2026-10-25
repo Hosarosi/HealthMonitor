@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HealthMonitor.Alertas"
+    Title="Alertas"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F8F5FC">
+
+    <Grid Padding="20" RowDefinitions="Auto,*">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="8" Margin="0,8,0,18">
+            <Label
+                Text="Alertas de saúde"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#8064C8"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Avisos sobre os valores registrados"
+                FontSize="15"
+                TextColor="#776B91"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Button
+                Text="Atualizar alertas"
+                Clicked="OnAtualizarClicked"
+                BackgroundColor="#A58AE8"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="44"
+                Margin="0,6,0,0" />
+        </VerticalStackLayout>
+
+        <CollectionView
+            x:Name="ListaAlertas"
+            Grid.Row="1"
+            SelectionMode="None">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout
+                    Spacing="10"
+                    Padding="20"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+
+                    <Label
+                        Text="Nenhum alerta encontrado"
+                        FontSize="19"
+                        FontAttributes="Bold"
+                        TextColor="#8064C8"
+                        HorizontalTextAlignment="Center" />
+
+                    <Label
+                        Text="Não há medições que acionem os critérios de alerta configurados."
+                        FontSize="14"
+                        TextColor="#776B91"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        BackgroundColor="White"
+                        Stroke="#E9E1F8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="16"
+                        Margin="0,0,0,12">
+
+                        <VerticalStackLayout Spacing="8">
+                            <Label
+                                Text="{Binding Tipo}"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="#8064C8" />
+
+                            <Label
+                                Text="{Binding Mensagem}"
+                                FontSize="15"
+                                TextColor="#34265C" />
+
+                            <Label
+                                Text="{Binding Nivel}"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="#A16A20" />
+
+                            <Label
+                                Text="{Binding DataFormatada}"
+                                FontSize="12"
+                                TextColor="#776B91" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+            Grid.Row="1"
+            Text="Voltar"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Clicked="OnVoltarClicked"
+            BackgroundColor="White"
+            TextColor="#8064C8"
+            BorderColor="#C8B8EE"
+            BorderWidth="1"
+            CornerRadius="10"
+            HeightRequest="42"
+            Padding="20,0"
+            Margin="0,0,0,4" />
+
+    </Grid>
+</ContentPage>

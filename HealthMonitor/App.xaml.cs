@@ -1,17 +1,24 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿
+namespace HealthMonitor;
 
-namespace HealthMonitor
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        var window = new Window(new AppShell());
+
+        window.Width = 1000;
+        window.Height = 750;
+
+        window.MinimumWidth = 800;
+        window.MinimumHeight = 650;
+
+        return window;
     }
 }
+

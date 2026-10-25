@@ -3,61 +3,183 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="HealthMonitor.CadastroPage"
-    Title="Cadastro de Usuário">
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F8F5FC">
 
-    <ScrollView>
+    <ScrollView VerticalScrollBarVisibility="Never">
         <VerticalStackLayout
-            Padding="30"
-            Spacing="15">
+            Padding="20,4"
+            Spacing="7"
+            HorizontalOptions="Fill">
+
+            <Button
+                Text="← Voltar ao login"
+                Clicked="OnVoltarClicked"
+                BackgroundColor="Transparent"
+                TextColor="#8064C8"
+                HorizontalOptions="Start"
+                FontSize="13"
+                Padding="0,2"
+                Margin="0" />
 
             <Label
-                Text="Cadastro de Usuário"
-                FontSize="28"
+                Text="HealthMonitor"
+                FontSize="25"
                 FontAttributes="Bold"
-                HorizontalOptions="Center" />
+                TextColor="#8064C8"
+                HorizontalOptions="Center"
+                Margin="0" />
 
-            <Label Text="Nome completo" />
-            <Entry
-                x:Name="NomeEntry"
-                Placeholder="Digite seu nome" />
+            <Label
+                Text="Criar sua conta"
+                FontSize="23"
+                FontAttributes="Bold"
+                TextColor="#8064C8"
+                HorizontalOptions="Center"
+                Margin="0" />
 
-            <Label Text="Idade" />
-            <Entry
-                x:Name="IdadeEntry"
-                Placeholder="Digite sua idade"
-                Keyboard="Numeric" />
+            <Label
+                Text="Cuide da sua saúde, uma medição de cada vez."
+                FontSize="13"
+                TextColor="#776B91"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                Margin="0" />
 
-            <Label Text="Peso (kg)" />
-            <Entry
-                x:Name="PesoEntry"
-                Placeholder="Exemplo: 70,5"
-                Keyboard="Numeric" />
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9E1F8"
+                StrokeThickness="1"
+                Padding="16"
+                StrokeShape="RoundRectangle 18"
+                HorizontalOptions="Fill">
 
-            <Label Text="Altura (m)" />
-            <Entry
-                x:Name="AlturaEntry"
-                Placeholder="Exemplo: 1,73"
-                Keyboard="Numeric" />
+                <VerticalStackLayout Spacing="4">
 
-            <Label Text="E-mail" />
-            <Entry
-                x:Name="EmailEntry"
-                Placeholder="Digite seu e-mail"
-                Keyboard="Email" />
+                    <Label
+                        Text="Nome completo"
+                        TextColor="#40345F"
+                        FontAttributes="Bold"
+                        FontSize="13" />
 
-            <Label Text="Senha" />
-            <Entry
-                x:Name="SenhaEntry"
-                Placeholder="Crie uma senha"
-                IsPassword="True" />
+                    <Entry
+                        x:Name="NomeEntry"
+                        Placeholder="Digite seu nome completo"
+                        BackgroundColor="#FBFAFE"
+                        TextColor="#34265C"
+                        PlaceholderColor="#A39AB8"
+                        ClearButtonVisibility="WhileEditing"
+                        HeightRequest="40" />
 
-            <Button
-                Text="Salvar cadastro"
-                Clicked="OnSalvarClicked" />
+                    <Label
+                        Text="Idade"
+                        TextColor="#40345F"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0,2,0,0" />
 
-            <Button
-                Text="Voltar"
-                Clicked="OnVoltarClicked" />
+                    <Entry
+                        x:Name="IdadeEntry"
+                        Placeholder="Digite sua idade"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FBFAFE"
+                        TextColor="#34265C"
+                        PlaceholderColor="#A39AB8"
+                        HeightRequest="40" />
+
+                    <Label
+                        Text="Peso (kg)"
+                        TextColor="#40345F"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0,2,0,0" />
+
+                    <Entry
+                        x:Name="PesoEntry"
+                        Placeholder="Ex.: 70,5"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FBFAFE"
+                        TextColor="#34265C"
+                        PlaceholderColor="#A39AB8"
+                        HeightRequest="40" />
+
+                    <Label
+                        Text="Altura (m)"
+                        TextColor="#40345F"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0,2,0,0" />
+
+                    <Entry
+                        x:Name="AlturaEntry"
+                        Placeholder="Ex.: 1,70"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FBFAFE"
+                        TextColor="#34265C"
+                        PlaceholderColor="#A39AB8"
+                        HeightRequest="40" />
+
+                    <Label
+                        Text="E-mail"
+                        TextColor="#40345F"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0,2,0,0" />
+
+                    <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="Digite seu e-mail"
+                        Keyboard="Email"
+                        BackgroundColor="#FBFAFE"
+                        TextColor="#34265C"
+                        PlaceholderColor="#A39AB8"
+                        HeightRequest="40" />
+
+                    <Label
+                        Text="Senha"
+                        TextColor="#40345F"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0,2,0,0" />
+
+                    <Entry
+                        x:Name="SenhaEntry"
+                        Placeholder="Crie uma senha"
+                        IsPassword="True"
+                        BackgroundColor="#FBFAFE"
+                        TextColor="#34265C"
+                        PlaceholderColor="#A39AB8"
+                        HeightRequest="40" />
+
+                    <Button
+                        Text="Criar conta"
+                        Clicked="OnSalvarClicked"
+                        BackgroundColor="#A58AE8"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        HeightRequest="44"
+                        Margin="0,6,0,0" />
+
+                    <Button
+                        Text="Voltar ao login"
+                        Clicked="OnVoltarClicked"
+                        BackgroundColor="Transparent"
+                        TextColor="#8064C8"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        HeightRequest="40"
+                        Margin="0" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label
+                Text="HealthMonitor • Cuidar hoje para um amanhã melhor."
+                FontSize="10"
+                TextColor="#938AA8"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,4" />
 
         </VerticalStackLayout>
     </ScrollView>

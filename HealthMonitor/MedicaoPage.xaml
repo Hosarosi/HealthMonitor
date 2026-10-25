@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HealthMonitor.MedicaoPage"
+    Title="Registrar medição"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F8F5FC">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="16">
+
+            <Label
+                Text="Registrar sinais vitais"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#8064C8"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Informe os dados da medição"
+                FontSize="16"
+                TextColor="#776B91"
+                HorizontalOptions="Center" />
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9E1F8"
+                StrokeShape="RoundRectangle 16"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label
+                        Text="Pressão arterial (mmHg)"
+                        FontAttributes="Bold"
+                        TextColor="#8064C8" />
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <Entry
+                            x:Name="SistolicaEntry"
+                            Grid.Column="0"
+                            Placeholder="Sistólica"
+                            Keyboard="Numeric"
+                            BackgroundColor="#FFFFFF"
+                            TextColor="#34265C" />
+
+                        <Entry
+                            x:Name="DiastolicaEntry"
+                            Grid.Column="1"
+                            Placeholder="Diastólica"
+                            Keyboard="Numeric"
+                            BackgroundColor="#FFFFFF"
+                            TextColor="#34265C" />
+                    </Grid>
+
+                    <Label
+                        Text="Frequência cardíaca (bpm)"
+                        FontAttributes="Bold"
+                        TextColor="#8064C8" />
+
+                    <Entry
+                        x:Name="FrequenciaEntry"
+                        Placeholder="Ex.: 75"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="#34265C" />
+
+                    <Label
+                        Text="Temperatura (°C)"
+                        FontAttributes="Bold"
+                        TextColor="#8064C8" />
+
+                    <Entry
+                        x:Name="TemperaturaEntry"
+                        Placeholder="Ex.: 36,5"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="#34265C" />
+
+                    <Label
+                        Text="Oxigenação (%)"
+                        FontAttributes="Bold"
+                        TextColor="#8064C8" />
+
+                    <Entry
+                        x:Name="OxigenacaoEntry"
+                        Placeholder="Ex.: 98"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="#34265C" />
+
+                    <Label
+                        Text="Observações (opcional)"
+                        FontAttributes="Bold"
+                        TextColor="#8064C8" />
+
+                    <Editor
+                        x:Name="ObservacoesEditor"
+                        Placeholder="Digite uma observação, se necessário"
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="90"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="#34265C" />
+
+                    <Button
+                        Text="Salvar medição"
+                        BackgroundColor="#A58AE8"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        HeightRequest="48"
+                        Clicked="OnSalvarClicked" />
+
+                    <Button
+                        Text="Voltar"
+                        BackgroundColor="White"
+                        TextColor="#8064C8"
+                        BorderColor="#C8B8EE"
+                        BorderWidth="1"
+                        CornerRadius="12"
+                        HeightRequest="48"
+                        Clicked="OnVoltarClicked" />
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

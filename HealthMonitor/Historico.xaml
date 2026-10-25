@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HealthMonitor.Historico"
+    Title="Histórico"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#F8F5FC">
+
+    <Grid RowDefinitions="Auto,*" Padding="20">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="6" Margin="0,8,0,18">
+            <Label
+                Text="Histórico de medições"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#8064C8"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Consulte os sinais vitais registrados"
+                FontSize="15"
+                TextColor="#776B91"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Button
+                Text="Atualizar histórico"
+                Clicked="OnAtualizarClicked"
+                BackgroundColor="#A58AE8"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="44"
+                Margin="0,8,0,0" />
+        </VerticalStackLayout>
+
+        <CollectionView
+            x:Name="ListaMedicoes"
+            Grid.Row="1"
+            SelectionMode="None">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout
+                    Spacing="8"
+                    Padding="20"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <Label
+                        Text="Nenhuma medição encontrada."
+                        FontSize="17"
+                        TextColor="#8064C8"
+                        HorizontalTextAlignment="Center" />
+                    <Label
+                        Text="As medições salvas aparecerão aqui."
+                        FontSize="14"
+                        TextColor="#776B91"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        BackgroundColor="White"
+                        Stroke="#E9E1F8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="16"
+                        Margin="0,0,0,12">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <Label
+                                Text="{Binding DataFormatada}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#8064C8" />
+
+                            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto"
+                                  ColumnSpacing="12" RowSpacing="8">
+
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="2">
+                                    <Label Text="Pressão arterial" FontSize="12" TextColor="#776B91" />
+                                    <Label Text="{Binding PressaoFormatada}" FontSize="15"
+                                           FontAttributes="Bold" TextColor="#34265C" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="2">
+                                    <Label Text="Frequência cardíaca" FontSize="12" TextColor="#776B91" />
+                                    <Label Text="{Binding FrequenciaFormatada}" FontSize="15"
+                                           FontAttributes="Bold" TextColor="#34265C" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="0" Spacing="2">
+                                    <Label Text="Temperatura" FontSize="12" TextColor="#776B91" />
+                                    <Label Text="{Binding TemperaturaFormatada}" FontSize="15"
+                                           FontAttributes="Bold" TextColor="#34265C" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="2">
+                                    <Label Text="Oxigenação" FontSize="12" TextColor="#776B91" />
+                                    <Label Text="{Binding OxigenacaoFormatada}" FontSize="15"
+                                           FontAttributes="Bold" TextColor="#34265C" />
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                            <Label
+                                Text="{Binding ObservacoesFormatadas}"
+                                FontSize="13"
+                                TextColor="#776B91"
+                                IsVisible="{Binding TemObservacoes}" />
+
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+            Grid.Row="1"
+            Text="Voltar"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Clicked="OnVoltarClicked"
+            BackgroundColor="White"
+            TextColor="#8064C8"
+            BorderColor="#C8B8EE"
+            BorderWidth="1"
+            CornerRadius="10"
+            HeightRequest="42"
+            Padding="20,0"
+            Margin="0,0,0,4" />
+
+    </Grid>
+</ContentPage>
